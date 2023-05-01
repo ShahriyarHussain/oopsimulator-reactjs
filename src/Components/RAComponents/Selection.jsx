@@ -49,7 +49,7 @@ function Selection() {
     };
 
     return (
-        <div className="flex flex-col text-lg ml-2">
+        <div className="flex flex-col text-lg mb-4">
             <label className="font-bold text-2xl m-3">Selection</label>
             <label className="text-sm text-gray-500 mb-3 ">(First query table then choose selection/whereClause)</label>
             <div className="flex-row">

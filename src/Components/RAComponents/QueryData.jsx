@@ -22,7 +22,7 @@ function QueryData() {
 
 
     return (
-        <div className="flex flex-col text-lg ml-2">
+        <div className="flex flex-col text-lg mb-4">
             <label className="font-bold text-2xl m-3">Query Any Table</label>
             <label>Enter table name</label>
             <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onChangeHandler}/>

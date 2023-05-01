@@ -1,6 +1,6 @@
 function Table({ headers, rows }) {
     return (
-        <table className="max-w-screen-sm">
+        <table className="max-w-screen-sm m-3">
             <thead>
                 <tr>
                     {headers.map(

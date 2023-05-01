@@ -45,7 +45,7 @@ function Projection() {
 
 
     return (
-        <div className="flex flex-col text-lg ml-2">
+        <div className="flex flex-col text-lg mb-4">
             <label className="font-bold text-2xl mt-3 mx-3">Projection</label>
             <label className="text-sm text-gray-500 mb-3 ">(First query table then choose projection/columns)</label>
             <label>Enter table name</label>

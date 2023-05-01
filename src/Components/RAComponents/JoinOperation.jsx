@@ -46,7 +46,7 @@ function JoinOperation() {
 
 
     return (
-        <div className="text-lg">
+        <div className="flex flex-col text-lg mb-4">
             <label>Enter table name</label>
             <input className="ml-2 border border-black" onChange={onTableNameChange} />
             <button className="bg-cyan-400 rounded-sm font-bold" onClick={getTableData}>Fetch Data</button>

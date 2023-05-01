@@ -26,7 +26,7 @@ function QueryData() {
             <label className="font-bold text-2xl m-3">Query Any Table</label>
             <label>Enter table name</label>
             <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onChangeHandler}/>
-            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>Fetch Data</button>
+            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>View Table Data</button>
             {errorMsg !== "OK" ? errorMsg : ""}
             {tableData != null ?
             <Table headers={Object.keys(tableData[0])} rows={tableData} /> : ""

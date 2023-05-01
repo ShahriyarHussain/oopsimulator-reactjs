@@ -49,7 +49,7 @@ function JoinOperation() {
         <div className="flex flex-col text-lg mb-4">
             <label>Enter table name</label>
             <input className="ml-2 border border-black" onChange={onTableNameChange} />
-            <button className="bg-cyan-400 rounded-sm font-bold" onClick={getTableData}>Fetch Data</button>
+            <button className="bg-cyan-400 rounded-sm font-bold" onClick={getTableData}>View Table Data</button>
             {errorMsg !== "OK" ? errorMsg : ""}
             {tableData != null ?
                 <Table headers={Object.keys(tableData[0])} rows={tableData} /> : ""

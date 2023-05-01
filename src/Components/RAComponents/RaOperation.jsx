@@ -65,10 +65,10 @@ function RaOperation() {
 
 
     return (
-        <div className="flex flex-col text-lg  mt-4">
-            <label className="text-2xl font-bold ">Relational Algebra Operations</label>
-            <label className="text-sm text-gray-500 mb-3 ">(choose Operation and name of 2 tables, table attributes must be similar)</label>
-            <label className="text-lg mb-3 mt-4 ">(For demonstration student and student2 are similar type tables)</label>
+        <div className="flex flex-col text-lg  mt-4 mb-10">
+            <label className="text-2xl font-bold mb-4">Relational Algebra Operations</label>
+            <label className="text-md text-gray-500 mb-3 ">(choose Operation and name of 2 tables, table attributes must be similar)</label>
+            <label className="text-md text-gray-500 mb-3">(i.e. student and student2 are similar type tables, click below to view data)</label>
 
             <button className="bg-cyan-400 rounded-lg font-bold px-4 py-2 m-1 max-w-fit" 
             onClick={loadInitialTableData}>View Data</button>

@@ -55,7 +55,7 @@ function Selection() {
             <div className="flex-row">
                 <label>Select * FROM </label>
                 <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onChangeHandler} />
-                <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>Fetch Data</button>
+                <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>View Table Data</button>
                 {!errorMsg.startsWith("Error! : ") ?
                     <Table headers={Object.keys(tableData[0])} rows={tableData} /> : errorMsg
                 }

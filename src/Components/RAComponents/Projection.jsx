@@ -50,7 +50,7 @@ function Projection() {
             <label className="text-sm text-gray-500 mb-3 ">(First query table then choose projection/columns)</label>
             <label>Enter table name</label>
             <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onTableNameChange}/>
-            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>Fetch Data</button>
+            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>View Table Data</button>
             {errorMsg !== "OK" ? errorMsg : ""}
             {tableData != null ?
                 <Table headers={Object.keys(tableData[0])} rows={tableData} /> : ""

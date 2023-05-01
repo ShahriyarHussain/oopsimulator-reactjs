@@ -4,7 +4,7 @@ function Table({ headers, rows }) {
             <thead>
                 <tr>
                     {headers.map(
-                        columnName => <th className="p-1 m-1 border border-black bg-cyan-200" key={columnName}>{columnName}</th>
+                        columnName => <th className="p-1 m-1 border border-black bg-slate-300" key={columnName}>{columnName}</th>
                     )}
                 </tr>
             </thead>

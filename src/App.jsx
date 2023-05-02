@@ -1,18 +1,14 @@
 import './App.css';
-import Projection from './Components/RAComponents/Projection';
-import QueryData from './Components/RAComponents/QueryData';
-import RaOperation from './Components/RAComponents/RaOperation';
-import Selection from './Components/RAComponents/Selection';
 import AllTables from './Components/Table/AllTables';
+import Navbar from './Components/Navbar/Navbar';
+// import JoinOperation from './Components/RAComponents/JoinOperation';
 
 function App() {
   return (
-    <div className='ml-10'>
+    <div className='ml-10 mr-5'>
     <AllTables/>
-      <QueryData/>
-      <Projection/>
-      <Selection/>
-      <RaOperation/>
+    <Navbar/>
+    {/* <JoinOperation/> */}
     </div>    
   );
 }

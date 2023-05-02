@@ -18,7 +18,7 @@ function JoinOperation() {
                 "Accept": "application/json"
             },
             method: "POST",
-            body: JSON.stringify(projection)
+            body: JSON.stringify("projection")
         })
             .then(response => response.json())
             .catch(error => setErrorMsg("Error! : " + error))
@@ -26,35 +26,35 @@ function JoinOperation() {
             .catch(error => setErrorMsg("Error! : " + error))
     };
 
-    const onTableNameChange = e => {
-        setErrorMsg("");
-        setTableName(e.target.value);
-    };
+    // const onTableNameChange = e => {
+    //     setErrorMsg("");
+    //     setTableName(e.target.value);
+    // };
 
-    const onAttributeSelection = e => {
-        let value = e.target.value;
-        if (projection.includes(value)) {
-            projection.splice(projection.indexOf(value), 1);
-        } else {
-            projection.push(value);
-        }
-        setProjection([
-            ...projection,
+    // const onAttributeSelection = e => {
+    //     let value = e.target.value;
+    //     if (projection.includes(value)) {
+    //         projection.splice(projection.indexOf(value), 1);
+    //     } else {
+    //         projection.push(value);
+    //     }
+    //     setProjection([
+    //         ...projection,
             
-        ]);
-    };
+    //     ]);
+    // };
 
 
     return (
         <div className="flex flex-col text-lg mb-4">
             <label>Enter table name</label>
-            <input className="ml-2 border border-black" onChange={onTableNameChange} />
+            {/* <input className="ml-2 border border-black" onChange={onTableNameChange} /> */}
             <button className="bg-cyan-400 rounded-sm font-bold" onClick={getTableData}>View Table Data</button>
             {errorMsg !== "OK" ? errorMsg : ""}
             {tableData != null ?
                 <Table headers={Object.keys(tableData[0])} rows={tableData} /> : ""
             }
-            {Object.keys(tableData[0]).map(attribute =>
+            {/* {Object.keys(tableData[0]).map(attribute =>
                 <label>
                     <input className="m-2 border-2 border-green-500"
                         type="checkbox"
@@ -63,7 +63,7 @@ function JoinOperation() {
                         onClick={onAttributeSelection} />
                     {attribute}
                 </label>)
-            }
+            } */}
         </div>
     );
 }

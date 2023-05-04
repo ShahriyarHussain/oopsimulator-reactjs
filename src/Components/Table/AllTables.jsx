@@ -7,12 +7,12 @@ function AllTables() {
 
 
     useEffect(() => {
-        fetch("http://localhost:15071/trigger_&_cluster/queryTableData/getAllTables"
+        fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/getAllTables"
         )
             .then(response => response.json())
             .then(data => setTableNames(data))
             .catch(error => setErrorMsg("Error! : " + error));
-        fetch("http://localhost:15071/trigger_&_cluster/queryTableData/getDbInfo",        
+        fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/getDbInfo",        
         )
             .then(response => response.json())
             .then(data => setVersion(data))

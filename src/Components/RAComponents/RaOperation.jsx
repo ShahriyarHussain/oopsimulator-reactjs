@@ -11,7 +11,7 @@ function RaOperation() {
     const operations = ["UNION", "DIFFERENCE", "INTERSECT"];
 
     const loadInitialTableData = () => {
-        fetch("http://localhost:15071/trigger_&_cluster/queryTableData/student"
+        fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/student"
         )
             .then(response => response.json())
             .then(data => {
@@ -19,7 +19,7 @@ function RaOperation() {
                 setErrorMsg("SUCCESS!");
             })
             .catch(error => setErrorMsg("Error! : " + error));
-        fetch("http://localhost:15071/trigger_&_cluster/queryTableData/student2"
+        fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/student2"
         )
             .then(response => response.json())
             .then(data => {
@@ -37,7 +37,7 @@ function RaOperation() {
             "tableName2" : "student2",
         };
         
-        fetch("http://localhost:15071/ra_simulator/operation", {
+        fetch(process.env.REACT_APP_BASE_URL + "ra_simulator/operation", {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"

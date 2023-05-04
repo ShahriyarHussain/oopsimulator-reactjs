@@ -8,7 +8,7 @@ function QueryData() {
 
 
     const getTableData = () => {
-        fetch("http://localhost:15071/trigger_&_cluster/queryTableData/" + tableName
+        fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/" + tableName
         )
     .then(response => response.json())
     .then(data => setTableData(data))

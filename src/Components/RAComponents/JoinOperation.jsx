@@ -11,8 +11,7 @@ function JoinOperation() {
 
 
     const getTableData = () => {
-        // fetch("http://localhost:15071/ra_simulator/projection" + tableName
-        fetch("http://localhost:15071/ra_simulator/operation", {
+        fetch(process.env.REACT_APP_BASE_URL + "ra_simulator/joinOperation", {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"

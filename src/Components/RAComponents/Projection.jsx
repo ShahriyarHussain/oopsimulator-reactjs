@@ -46,7 +46,7 @@ function Projection() {
 
     return (
         <div className="flex flex-col text-lg mb-4">
-            <label className="font-bold text-2xl mt-3 mx-3">Projection</label>
+            <label className="font-bold text-2xl mt-3 mx-3">Projection(π)</label>
             <label className="text-sm text-gray-500 mb-3 ">(First query table then choose projection/columns)</label>
             <label>Enter table name</label>
             <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onTableNameChange}/>

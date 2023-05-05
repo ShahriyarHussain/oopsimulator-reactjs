@@ -3,15 +3,18 @@ import Projection from '../RAComponents/Projection';
 import QueryData from '../RAComponents/QueryData';
 import RaOperation from '../RAComponents/RaOperation';
 import Selection from '../RAComponents/Selection';
+import RenameColumn from "../RAComponents/RenameColumn";
+import JoinOperation from "../RAComponents/JoinOperation";
 
 
 function Navbar() {
     const [navIndex, setNavIndex] = useState(0);
 
     const navBarMenu = ['Query Any Table', 'Selection Operation',
-        'Projection Operation', 'Basic Relational Algebra Operations',
-        'Join Operations'];
-    const operationWindows = [<QueryData />, <Selection />, <Projection />, <RaOperation />];
+        'Projection Operation', 'Relational Algebra',
+        'Rename', 'Join Operations', 'Triggers', 'Cluster'];
+    const operationWindows = [<QueryData />, <Selection />, <Projection />,
+    <RaOperation />, <RenameColumn />, <JoinOperation />];
 
     return (
         <div>

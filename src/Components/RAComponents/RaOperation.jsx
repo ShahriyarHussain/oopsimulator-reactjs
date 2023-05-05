@@ -8,7 +8,7 @@ function RaOperation() {
     const [errorMsg, setErrorMsg] = useState("SUCCESS");
     const [operation, setOperation] = useState("");
 
-    const operations = ["UNION", "DIFFERENCE", "INTERSECT"];
+    const operations = ["Union(U)", "Difference(-)", "Intersect(∩)"];
 
     const loadInitialTableData = () => {
         fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/student"

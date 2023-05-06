@@ -46,15 +46,11 @@ function Projection() {
 
     return (
         <div className="flex flex-col text-lg mb-4">
-            <label className="font-bold text-2xl mt-3 mx-3">Projection</label>
+            <label className="font-bold text-2xl mt-3 mx-3">Projection(π)</label>
             <label className="text-sm text-gray-500 mb-3 ">(First query table then choose projection/columns)</label>
             <label>Enter table name</label>
             <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onTableNameChange}/>
-            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>View Table Data</button>
-            {errorMsg !== "OK" ? errorMsg : ""}
-            {tableData != null ?
-                <Table headers={Object.keys(tableData[0])} rows={tableData} /> : ""
-            }
+            <div className="flex-row">
             {Object.keys(tableData[0]).map(attribute =>
                 <label>
                     <input className="m-2 border-2 border-green-500"
@@ -65,6 +61,12 @@ function Projection() {
                     {attribute}
                 </label>)
             }
+            </div>
+            <button className="bg-cyan-400 rounded-md font-bold max-w-fit my-3 p-2" onClick={getTableData}>View Table Data</button>
+            {errorMsg !== "OK" ? errorMsg : ""}
+            {tableData != null ?
+                <Table headers={Object.keys(tableData[0])} rows={tableData} /> : ""
+            }            
         </div>
     );
 }

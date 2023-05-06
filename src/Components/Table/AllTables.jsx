@@ -28,8 +28,8 @@ function AllTables() {
             <table className="max-w-screen-sm m-3">
                 <tbody>
                     <tr>
-                        {tableNames.map(col => {
-                            return <td className="p-1 m-1 border border-black">{col}</td>
+                        {tableNames.map((col, index) => {
+                            return <td className="p-1 m-1 border border-black" key={index}>{col}</td>
                         })}
                     </tr>
                 </tbody>

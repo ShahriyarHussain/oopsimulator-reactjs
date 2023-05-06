@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import Projection from '../RAComponents/Projection';
-import QueryData from '../RAComponents/QueryData';
+import QueryData from '../TriggerClusters/QueryData';
 import RaOperation from '../RAComponents/RaOperation';
 import Selection from '../RAComponents/Selection';
 import RenameColumn from "../RAComponents/RenameColumn";
 import JoinOperation from "../RAComponents/JoinOperation";
+import Trigger from "../TriggerClusters/Trigger";
+import Insert from "../TriggerClusters/Insert";
+import Cluster from "../TriggerClusters/Cluster";
 
 
 function Navbar() {
     const [navIndex, setNavIndex] = useState(0);
 
-    const navBarMenu = ['Query Any Table', 'Selection Operation',
-        'Projection Operation', 'Relational Algebra',
-        'Rename', 'Join Operations', 'Triggers', 'Cluster'];
+    const navBarMenu = ['Query Table', 'Selection',
+        'Projection', 'Relational Algebra',
+        'Rename', 'Join Operations', 'Triggers', 'Insert', 'Cluster'];
     const operationWindows = [<QueryData />, <Selection />, <Projection />,
-    <RaOperation />, <RenameColumn />, <JoinOperation />];
+    <RaOperation />, <RenameColumn />, <JoinOperation />, <Trigger/>, <Insert/>, <Cluster/>];
 
     return (
         <div>

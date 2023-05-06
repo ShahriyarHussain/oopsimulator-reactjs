@@ -56,14 +56,10 @@ function Selection() {
             <label className="font-bold text-2xl m-3">Selection(σ)</label>
             <label className="text-sm text-gray-500 mb-3 ">(First query table then choose selection/whereClause)</label>
             <div className="flex-row">
-                <label>Select * FROM </label>
+                <label>SELECT * FROM </label>
                 <input className="border border-black max-w-fit m-2 p-1 rounded-md" onChange={onChangeHandler} />
-                <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={getTableData}>View Table Data</button>
-                {!errorMsg.startsWith("Error! : ") ?
-                    <Table headers={Object.keys(tableData[0])} rows={tableData} /> : errorMsg
-                }
                 {errorMsg.startsWith("SUCCESS") ?
-                    <div className="mt-2">
+                    <div className="mt-2 mb-3">
                         <label>Where</label>
                         <select
                             className=' p-1 text-black bg-cyan-100 border border-black ml-3'
@@ -91,6 +87,11 @@ function Selection() {
                     </div>
                     : ""}
             </div>
+            <button className="bg-cyan-400 rounded-md font-bold max-w-fit p-2 my-3" onClick={getTableData}>View Table Data</button>
+            {!errorMsg.startsWith("Error! : ") ?
+                <Table headers={Object.keys(tableData[0])} rows={tableData} /> : errorMsg
+            }
+
         </div>
     );
 }

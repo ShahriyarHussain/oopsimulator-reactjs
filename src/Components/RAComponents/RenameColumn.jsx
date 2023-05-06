@@ -36,7 +36,7 @@ function RenameColumn() {
 
     return (
         <div className="flex flex-col text-lg mb-4">
-            <label className="font-bold text-2xl m-3">Rename A Column</label>
+            <label className="font-bold text-2xl m-3">Rename(ρ)</label>
             <label className="text-sm text-gray-500 mb-3 ">Use Query Table Tab to learn About the table's attributes</label>
             <div>
             <label>ALTER TABLE</label>
@@ -47,7 +47,7 @@ function RenameColumn() {
             <label>TO</label>
             <input className="border border-black w-40 max-w-fit m-2 p-1 rounded-md" name="newColumnName" onChange={onChangeHandler}/>
             </div>
-            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={renameColumn}>Execute Query</button>
+            <button className="bg-cyan-400 rounded-md font-bold max-w-fit my-3 p-2" onClick={renameColumn}>Execute Query</button>
             {!errorMsg.startsWith("SUCCESS") ? errorMsg : ""}
         </div>
     );

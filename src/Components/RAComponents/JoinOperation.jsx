@@ -3,8 +3,8 @@ import Table from "../Table/Table";
 
 function JoinOperation() {
     const [tableData, setTableData] = useState([{}]);
-    const [table1Data, settable1Data] = useState([{}]);
-    const [table2Data, settable2Data] = useState([{}]);
+    const [table1Data, setTable1Data] = useState([{}]);
+    const [table2Data, setTable2Data] = useState([{}]);
     const [errorMsg, setErrorMsg] = useState("SUCCESS");
     const [joinOperationBody, setJoinOperationBody] = useState({});
     const [operation, setOperation] = useState("");
@@ -17,8 +17,12 @@ function JoinOperation() {
     const executeJoin = () => {
         getQueryPreview();
         setErrorMsg("SUCCESS");
+
         let body = joinOperationBody;
-        body["whereClause"] = [whereClause];
+        if (operation !== "NATURAL JOIN" && operation !== "CROSS PRODUCT") {
+            body["whereClause"] = [whereClause];
+        }
+
         getTableData(joinOperationBody.tableName1, 1);
         getTableData(joinOperationBody.tableName2, 2);
         fetch(process.env.REACT_APP_BASE_URL + "ra_simulator/joinOperation", {
@@ -42,7 +46,7 @@ function JoinOperation() {
         fetch(process.env.REACT_APP_BASE_URL + "trigger_&_cluster/queryTableData/" + tableName
         )
             .then(response => response.json())
-            .then(data => tableNo === 1 ? settable1Data(data) : settable2Data(data))
+            .then(data => tableNo === 1 ? setTable1Data(data) : setTable2Data(data))
             .catch(error => setErrorMsg("Error! : " + error))
     };
 
@@ -71,7 +75,7 @@ function JoinOperation() {
                     };
                 });
             }
-        }    
+        }
     };
 
     const onWhereClauseChange = e => {
@@ -93,7 +97,7 @@ function JoinOperation() {
     function getQueryPreview() {
         let queryString = "Query Preview: SELECT * FROM " + joinOperationBody.tableName1 + " a ";
         if (operation === "NATURAL JOIN" || operation === "CROSS PRODUCT" || operation === "THETA JOIN") {
-            queryString = queryString + " , " + joinOperationBody.tableName2+ " b ";
+            queryString = queryString + " , " + joinOperationBody.tableName2 + " b ";
         } else {
             queryString = queryString + " " + operation + " " + joinOperationBody.tableName2 + " b ";
         }
@@ -112,7 +116,7 @@ function JoinOperation() {
 
     return (
         <div className="flex flex-col text-lg mb-4">
-            <label className="text-2xl font-bold mb-4">Join Operations</label>
+            <label className="text-2xl font-bold my-4">Join Operations</label>
             {!errorMsg.startsWith("SUCCESS") ? errorMsg : ""}
             <div>
                 <input className="border border-black w-40 max-w-fit m-2 p-1 rounded-md" name="tableName1" onChange={onChangeHandler} placeholder="Table 1 Name" />
@@ -171,7 +175,7 @@ function JoinOperation() {
 
             <div className="flex-row"></div>
 
-            <button className="bg-cyan-400 rounded-md font-bold max-w-fit m-2 p-2" onClick={executeJoin}>Perform Join</button>
+            <button className="bg-cyan-400 rounded-md font-bold max-w-fit my-3 p-2" onClick={executeJoin}>Perform Join</button>
 
             {!errorMsg.startsWith("SUCCESS") ? errorMsg : ""}
             {errorMsg.startsWith("SUCCESS!") ? <label className="text-xl font-bold mb-4">Data Before Join</label> : ""}
